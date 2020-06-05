@@ -1,0 +1,2 @@
+# altai
+Social community generator
