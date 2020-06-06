@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
   content: {
     marginTop: '20px',
   },
-
 }));
 
 function Candidates() {
@@ -108,4 +107,3 @@ function Candidates() {
 }
 
 export default Candidates;
-

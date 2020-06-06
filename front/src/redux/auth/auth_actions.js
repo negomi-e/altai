@@ -1,20 +1,21 @@
 import { AUTH, ERR, LOGOUT } from './auth_actionTypes'
 
-export function auth(id) {
+export function auth(id, status) {
   return {
     type: AUTH,
-    payload: id
+    payload: id,
+    status,
   }
 }
 
-export function show_err(err){
+export function show_err(err) {
   return {
     type: ERR,
     payload: err
   }
 }
 
-export function logout(err){
+export function logout(err) {
   return {
     type: LOGOUT,
   }
@@ -33,12 +34,12 @@ export function auth_login(phone, password) {
         password
       })
     })
-    const { err, id, success } = await response.json()
+    const { err, id, success, status } = await response.json()
     if (err) {
       dispatch(show_err(err))
     }
     if (success) {
-      dispatch(auth(id))
+      dispatch(auth(id, status))
     }
   }
 }
@@ -67,11 +68,11 @@ export function auth_register(phone, name, password) {
   }
 }
 
-export function out(){
+export function out() {
   return async (dispatch) => {
     const response = await fetch('/auth/logout')
     const { success } = await response.json()
-    if(success){
+    if (success) {
       dispatch(logout())
     }
   }
