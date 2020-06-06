@@ -1,9 +1,18 @@
+//FUNCTION
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
-import InfluencerCard from './Card'
+import { withRouter } from 'react-router-dom';
+import {
+  getUser,
+} from '../../../redux/user/actions';
 
+//DESIGN
+import InfluencerCard from './Card'
 import { makeStyles } from '@material-ui/core/styles';
 import { IconButton, Grid, Typography, TextField } from '@material-ui/core';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,78 +27,15 @@ const Candidates = ()=> {
 
   let inputSearch = '';
 
-  const [hasError, setErrors] = useState(false);
-  const [influencers, setInfluencers] = useState({});
-
-  async function fetchData() {
-    const res = await fetch('/influencers');
-    res
-      .json()
-      .then(res => setInfluencers(res))
-      .catch(err => setErrors(err));
-  }
-
   useEffect(() => {
-    fetchData();
+    //PROBLEM THIS ONLY RENDERS ONE USER-- I NEED ALL
+    this.props.getUser(localStorage.getItem('id'));
   });
-
+  
+  const {user} = this.props
   const classes = useStyles();
-  // const influencers = [{
-  //   id: 1,
-  //   name: 'Jeremy',
-  //   votes: 30,
-  //   bio:
-  //     'I love long walks by the beach',
-  //   region: 'Altai',
-  //   topics: [{
-  //     id: 1,
-  //     issue: 'Overcrowded parks',
-  //     createdAt: 1555016400000,
-  //   },
-  //   {
-  //     id: 2,
-  //     issue: 'Overcrowded parks',
-  //     createdAt: 1555016400000,
-  //   }]
-  // }, {
-  //   id: 2,
-  //   name: 'Lisa',
-  //   votes: 4,
-  //   bio:
-  //     'I am an environmentalist',
-  //   region: 'Lower Altai',
-  //   topics: []
-  // }, {
-  //   id: 3,
-  //   name: 'Emily',
-  //   votes: 160,
-  //   bio:
-  //     'I am an environmentalist',
-  //   region: 'Altai',
-  //   topics: [{
-  //     id: 1,
-  //     issue: 'Overcrowded parks',
-  //     createdAt: 1555016400000,
-  //   },
-  //   {
-  //     id: 2,
-  //     issue: 'QUARANTINE QUEEN',
-  //     createdAt: 1555016400000,
-  //   }]
-  // }, {
-  //   id: 4,
-  //   name: 'Alfie',
-  //   votes: 0,
-  //   bio:
-  //     'I am an environmentalist',
-  //   region: 'Lower Altai',
-  //   topics: [{
-  //     id: 1,
-  //     issue: 'Overcrowded parks',
-  //     createdAt: 1555016400000,
-  //   }]
-  // }]
-
+  const users = []
+  
 
   let Search = (e) => {
     // this.props.search(e.target.value)
@@ -105,7 +51,7 @@ const Candidates = ()=> {
           container
           spacing={3}
         >
-          {influencers.map(influencer => (
+          {user.map(influencer => (
             <Grid
               item
               key={influencer.id}

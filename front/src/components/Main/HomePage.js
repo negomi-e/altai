@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
 import HomeNav from '../Common/Nav/HomeNav'
 
-import Logout from '../auth/Logout'
+import Logout from '../../components/Auth/Logout'
 
 import Home from '../Pages/Home/Home'
 import Initiatives from '../Pages/Initiatives/Initiatives'

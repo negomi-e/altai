@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { InputGroup, FormControl, Button, Modal, } from 'react-bootstrap';
+import { InputGroup, FormControl, Button, Modal } from 'react-bootstrap';
 
-class ItemModal extends Component {
+class InitiativeModal extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            open: false,
+            open: true,
             title: '',
             body: ''
         }
@@ -14,7 +14,7 @@ class ItemModal extends Component {
     //Modal window methods
     setOpen = () => { this.setState({ open: !this.state.open }) };
 
-    addItem = async () => {
+    addInitiative = async () => {
         const product = {
             userId: this.props.userId,
             title: this.state.title,
@@ -55,7 +55,7 @@ class ItemModal extends Component {
                     </InputGroup>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className={styles.button} variant="primary" onClick={} type="submit" value='addItem'>Post</Button>
+                    <Button className='button' variant="primary" onClick={this.addInitiative} type="submit" value='addItem'>Post</Button>
                 </Modal.Footer>
             </Modal>
         )
