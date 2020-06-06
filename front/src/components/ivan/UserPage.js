@@ -20,7 +20,7 @@ class UserPage extends Component {
     const { user } = this.props;
 
     return (<>
-      <h1>Hello, {user.name}</h1>
+
       {user.leader &&
         user.leader.status
         ?
