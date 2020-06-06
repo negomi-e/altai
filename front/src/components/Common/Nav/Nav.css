@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  text-align:center;
+}
+
+nav {
+  border-radius: 0px 0px 10px 10px;
+  background-color: none !important;
+  background: #0C4D75 !important;
+}
+
+.navbar-nav {
+  text-align: right;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.navbar-nav a{
+  color: white;
+  font-size: '30px';
+  text-decoration: none;
+  padding: 10px;
+}
+.navbar-nav a:hover{
+  opacity:.8;
+  
+}
+.navbar-nav a .active{
+  opacity:.6;
+  font-weight: bold;
+}
+

@@ -11,10 +11,12 @@ export default function (state = initialState, action) {
     case AUTH:
       window.localStorage.setItem('isAuth', 'true')
       window.localStorage.setItem('id', action.payload)
+      window.localStorage.setItem('status', action.status)
       return {
         ...state,
         isAuthenticated: true,
         id: action.payload
+
       }
 
     case ERR:

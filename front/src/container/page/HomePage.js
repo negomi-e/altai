@@ -8,6 +8,7 @@ import Home from '../../components/Pages/Home/Home'
 import Initiatives from '../../components/Pages/Initiatives/Initiatives'
 import Candidates from '../../components/Pages/Candidates/Candidates'
 import ProjectsInProgress from '../../components/Pages/ProjectsInProgress/ProjectsInProgress'
+import UserPage from '../ivan/UserPage';
 
 class HomePage extends Component {
   render() {
@@ -21,11 +22,14 @@ class HomePage extends Component {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-              <NavLink to="/candidates">Candidates</NavLink>
-            </li>
-            <li>
-              <NavLink to="/issues">Initiatives</NavLink>
-            </li>
+            <NavLink to="/candidates">Candidates</NavLink>
+          </li>
+          <li>
+            <NavLink to="/issues">Initiatives</NavLink>
+          </li>
+          <li>
+            <NavLink to={`/${localStorage.getItem('id')}`}>Личный кабинет</NavLink>
+          </li>
         </ul>
 
 
@@ -43,11 +47,14 @@ class HomePage extends Component {
           <Route exact path="/">
             <Home />
           </Route>
+          <Route exact path="/:id">
+            <UserPage />
+          </Route>
         </Switch>
       </div>
-    
 
-        
+
+
       //   <Switch>
       //     <Route exact path="/login" component={Login} />
       //     <Route exact path="/register" component={Register} />

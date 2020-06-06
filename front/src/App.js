@@ -1,5 +1,5 @@
 import React from 'react';
-import MainPage from './container/page/MainPage'
+import MainPage from './components/Main/MainPage'
 
 
 
