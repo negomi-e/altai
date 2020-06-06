@@ -17,6 +17,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Container from '@material-ui/core/Container';
+import {Button} from 'react-bootstrap'
+import InitiativeModal from '../../Common/Modal/InititativeModal'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -43,12 +45,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
  function Initiatives() {
+  let open = false
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
 
   const data = [{
     name: 'W',
@@ -68,8 +73,13 @@ const useStyles = makeStyles((theme) => ({
   }
 ]
 
+const setOpen = () => { open = true} 
+
   return (
     <Container fixed>
+      <Button className="button" onClick={() => setOpen()}>Add initiative</Button>
+        {open ? <InitiativeModal /> : null}
+
       <>
       {data.map((item) => {
         return <>
