@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
-// import Logout from '../auth/Logout'
+import Logout from '../auth/Logout'
 // import Login from '../auth/Login'
 // import Register from '../auth/Register'
 
-import Home from './components/Pages/Home/Home'
-import Initiatives from './components/Pages/Initiatives/Initiatives'
-import Candidates from './components/Pages/Candidates/Candidates'
-import ProjectsInProgress from './components/Pages/ProjectsInProgress/ProjectsInProgress'
+import Home from '../../components/Pages/Home/Home'
+import Initiatives from '../../components/Pages/Initiatives/Initiatives'
+import Candidates from '../../components/Pages/Candidates/Candidates'
+import ProjectsInProgress from '../../components/Pages/ProjectsInProgress/ProjectsInProgress'
 
 class HomePage extends Component {
   render() {
@@ -18,7 +18,7 @@ class HomePage extends Component {
             <Logout />
           </li>
           <li>
-            <NavLink to="/homepage">Здесь ваша ссылка</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
               <NavLink to="/candidates">Candidates</NavLink>
