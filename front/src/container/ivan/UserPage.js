@@ -24,9 +24,9 @@ class UserPage extends Component {
       {user.leader &&
         user.leader.status
         ?
-        <Leader />
+        <Leader user={user} />
         :
-        <User />
+        <User user={user}/>
       }
     </>)
   }
