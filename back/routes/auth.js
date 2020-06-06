@@ -14,6 +14,7 @@ router.post('/login', async (req, res) => {
         res.json({
           success: true,
           id: user._id,
+          status: user.status,
         });
       } else {
         res.json({
