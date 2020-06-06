@@ -42,6 +42,10 @@ const UserSchema = new Schema({
   region: {
     type: String,
   },
+  initativ: {
+    type: Array,
+    default: [],
+  }
 });
 
 module.exports = model('User', UserSchema);
