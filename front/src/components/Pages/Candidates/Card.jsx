@@ -56,15 +56,15 @@ export default function InfluencerCard(props) {
     setExpanded(!expanded);
   };
   const {influencer} = props
-  const topics = influencer.topics
+  const topics = influencer.reports
   
 
   return (
-    <Card className={classes.root} key={influencer.id}>
+    <Card className={classes.root} key={influencer._id}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            {influencer.votes}
+            {influencer.votes.length}
           </Avatar>
         }
         action={
@@ -108,9 +108,9 @@ export default function InfluencerCard(props) {
                 {topics.length>0? topics.map(topic => (
                   <TableRow
                     hover
-                    key={topic.id}
+                    key={topic._id}
                   >
-                    <TableCell>{topic.issue}</TableCell>
+                    <TableCell>{topic.report}</TableCell>
                     <TableCell>
                       {moment(topic.createdAt).format('DD/MM/YYYY')}
                     </TableCell>

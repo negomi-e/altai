@@ -36,6 +36,12 @@ const UserSchema = new Schema({
   votes: {
     type: Array,
   },
+  bio: {
+    type: String,
+  },
+  region: {
+    type: String,
+  },
 });
 
 module.exports = model('User', UserSchema);

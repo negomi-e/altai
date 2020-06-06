@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import InfluencerCard from './Card'
 
@@ -15,65 +15,81 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function Candidates() {
+const Candidates = ()=> {
+
   let inputSearch = '';
 
+  const [hasError, setErrors] = useState(false);
+  const [influencers, setInfluencers] = useState({});
+
+  async function fetchData() {
+    const res = await fetch('/influencers');
+    res
+      .json()
+      .then(res => setInfluencers(res))
+      .catch(err => setErrors(err));
+  }
+
+  useEffect(() => {
+    fetchData();
+  });
+
   const classes = useStyles();
-  const influencers = [{
-    id: 1,
-    name: 'Jeremy',
-    votes: 30,
-    bio:
-      'I love long walks by the beach',
-    region: 'Altai',
-    topics: [{
-      id: 1,
-      issue: 'Overcrowded parks',
-      createdAt: 1555016400000,
-    },
-    {
-      id: 2,
-      issue: 'Overcrowded parks',
-      createdAt: 1555016400000,
-    }]
-  }, {
-    id: 2,
-    name: 'Lisa',
-    votes: 4,
-    bio:
-      'I am an environmentalist',
-    region: 'Lower Altai',
-    topics: []
-  }, {
-    id: 3,
-    name: 'Emily',
-    votes: 160,
-    bio:
-      'I am an environmentalist',
-    region: 'Altai',
-    topics: [{
-      id: 1,
-      issue: 'Overcrowded parks',
-      createdAt: 1555016400000,
-    },
-    {
-      id: 2,
-      issue: 'QUARANTINE QUEEN',
-      createdAt: 1555016400000,
-    }]
-  }, {
-    id: 4,
-    name: 'Alfie',
-    votes: 0,
-    bio:
-      'I am an environmentalist',
-    region: 'Lower Altai',
-    topics: [{
-      id: 1,
-      issue: 'Overcrowded parks',
-      createdAt: 1555016400000,
-    }]
-  }]
+  // const influencers = [{
+  //   id: 1,
+  //   name: 'Jeremy',
+  //   votes: 30,
+  //   bio:
+  //     'I love long walks by the beach',
+  //   region: 'Altai',
+  //   topics: [{
+  //     id: 1,
+  //     issue: 'Overcrowded parks',
+  //     createdAt: 1555016400000,
+  //   },
+  //   {
+  //     id: 2,
+  //     issue: 'Overcrowded parks',
+  //     createdAt: 1555016400000,
+  //   }]
+  // }, {
+  //   id: 2,
+  //   name: 'Lisa',
+  //   votes: 4,
+  //   bio:
+  //     'I am an environmentalist',
+  //   region: 'Lower Altai',
+  //   topics: []
+  // }, {
+  //   id: 3,
+  //   name: 'Emily',
+  //   votes: 160,
+  //   bio:
+  //     'I am an environmentalist',
+  //   region: 'Altai',
+  //   topics: [{
+  //     id: 1,
+  //     issue: 'Overcrowded parks',
+  //     createdAt: 1555016400000,
+  //   },
+  //   {
+  //     id: 2,
+  //     issue: 'QUARANTINE QUEEN',
+  //     createdAt: 1555016400000,
+  //   }]
+  // }, {
+  //   id: 4,
+  //   name: 'Alfie',
+  //   votes: 0,
+  //   bio:
+  //     'I am an environmentalist',
+  //   region: 'Lower Altai',
+  //   topics: [{
+  //     id: 1,
+  //     issue: 'Overcrowded parks',
+  //     createdAt: 1555016400000,
+  //   }]
+  // }]
 
 
   let Search = (e) => {
