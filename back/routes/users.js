@@ -34,4 +34,14 @@ router.post('/addinit', async (req, res) => {
     console.log(e);
   }
 })
+
+router.get('/all/1', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json({ users });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 module.exports = router;

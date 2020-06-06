@@ -1,6 +1,6 @@
 import {
   GET_USER,
-
+  GET_ALL,
 } from './types';
 
 export function getUser(id) {
@@ -32,6 +32,22 @@ export function addInitiative(product) {
       dispatch({
         type: GET_USER,
         payload: user
+      });
+    } catch (e) {
+      console.log(e)
+    }
+  }
+}
+
+export function getAllUsers() {
+console.log(333)
+  return async function (dispatch) {
+    try {
+      const response = await fetch('/users/all/1');
+      const { users } = await response.json();
+      dispatch({
+        type: GET_ALL,
+        payload: users,
       });
     } catch (e) {
       console.log(e)
