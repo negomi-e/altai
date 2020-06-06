@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import { NavLink, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import AuthNav from '../Common/Nav/AuthNav'
-import Register from '../auth/Register'
-import Login from '../auth/Login'
+import Register from '../Auth/Register'
+import Login from '../Auth/Login'
 
 export default class AuthPage extends Component {
   render() {

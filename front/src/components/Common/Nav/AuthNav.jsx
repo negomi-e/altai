@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom';
+import React from 'react'
+import { NavLink} from 'react-router-dom';
 import classes from './Nav.css';
 import { Nav, Navbar, Container } from 'react-bootstrap'
 

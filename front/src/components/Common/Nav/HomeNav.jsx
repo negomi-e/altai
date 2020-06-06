@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { NavLink, Route, Switch } from 'react-router-dom'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Nav, Navbar, Container } from 'react-bootstrap'
-import Logout from '../../auth/Logout'
+import Logout from '../../Auth/Logout'
 import classes from './Nav.css';
 
 

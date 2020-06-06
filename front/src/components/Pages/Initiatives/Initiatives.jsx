@@ -1,22 +1,16 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
 import {
-    Card,
-    CardHeader,
     CardContent,
-    CardActions,
-    Button,
-    Divider,
     List,
     ListItem,
-    ListItemAvatar,
     ListItemText,
     IconButton
   } from '@material-ui/core';
   import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Container from 'react-bootstrap';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
