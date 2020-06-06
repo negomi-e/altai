@@ -1,23 +1,15 @@
 import React, { Component } from 'react'
-import Login from '../auth/Login'
+
 import { NavLink, Route, Switch } from 'react-router-dom'
+import AuthNav from '../Common/Nav/AuthNav'
 import Register from '../auth/Register'
+import Login from '../auth/Login'
 
 export default class AuthPage extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li>
-            <NavLink to="/">Алтай</NavLink>
-          </li>
-          <li>
-            <NavLink to="/login">Авторизация</NavLink>
-          </li>
-          <li>
-            <NavLink to="/register">Регистрация</NavLink>
-          </li>
-        </ul>
+        <AuthNav />
 
       <Switch>
         <Route exact path="/" component={() => <h1>Добро пожаловать</h1>} />
