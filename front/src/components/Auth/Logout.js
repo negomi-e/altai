@@ -16,7 +16,7 @@ import { out } from '../../redux/auth/auth_actions'
     
     return (
       <>
-       <NavLink to="/logout" onClick={this.clickHandler}><p>Logout</p></NavLink>
+       <NavLink to="/logout" onClick={this.clickHandler}><p>Выйти</p></NavLink>
       </>
     )
   }

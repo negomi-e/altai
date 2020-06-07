@@ -100,10 +100,10 @@ const topics =[{
             size="small"
             variant="outlined"
           >
-            New entry
+            Новая запись
           </Button>
         }
-        title="What's Hot"
+        title="Новости"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -112,9 +112,9 @@ const topics =[{
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Topic</TableCell>
-                  <TableCell>Author</TableCell>
-                  <TableCell>Kudos</TableCell>
+                  <TableCell>Тема</TableCell>
+                  <TableCell>Автор</TableCell>
+                  <TableCell>Голоса</TableCell>
                   <TableCell sortDirection="desc">
                     <Tooltip
                       enterDelay={300}
@@ -124,7 +124,7 @@ const topics =[{
                         active
                         direction="desc"
                       >
-                        Date
+                        Дата
                       </TableSortLabel>
                     </Tooltip>
                   </TableCell>
@@ -162,7 +162,7 @@ const topics =[{
           size="small"
           variant="text"
         >
-          View all <ArrowRightIcon />
+          Посмотреть все <ArrowRightIcon />
         </Button>
       </CardActions>
     </Card>

@@ -115,8 +115,8 @@ function User({
         <form onSubmit={getDataOfForm}>
        <label style={style.label}>Oбразование:</label><br/>
           <input style={style.input} name="education" placeholder="  укажите образование" /> <br/>
-       <label style={style.label}> Cтаж: </label><br/>
-          <input style={style.input} name="experience" placeholder="  укажите стаж" /> <br/>
+       <label style={style.label}> Сфера деятельности: </label><br/>
+          <input style={style.input} name="experience" placeholder="  укажите сферу" /> <br/>
        <label style={style.label}>Общественная деятельность: </label> <br/>
           <input style={style.input} name="publicActivity" placeholder="  укажите общественную деятельность" /><br/>
        <label style={style.label}> Социальная сеть:</label><br/>

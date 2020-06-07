@@ -77,7 +77,7 @@ const setOpen = () => { open = true}
 
   return (
     <Container fixed>
-      <Button className="button" onClick={() => setOpen()}>Add initiative</Button>
+      <Button className="button" onClick={() => setOpen()}>Добавить инициативу</Button>
         {open ? <InitiativeModal /> : null}
 
       <>

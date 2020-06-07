@@ -4,16 +4,10 @@ import { connect } from 'react-redux';
 import User from '../../components/user/User';
 import Leader from '../../components/user/Leader';
 import Expert from '../../components/user/Expert';
-
-// import {  getUser,} from '../../redux/user/actions';
 import { asyncSendDataToBase, 
   // asyncGetDataAboutPerson 
 } from '../../redux/personalCabinet/asyncActionCreator'
-// import { sendDataToStore } from '../../redux/personalCabinet/actionCreator'
 
-// class UserPage extends Component {
-//   state = { showButton: false }
-// }
 
 import InitiativeModal from '../../components/Common/Modal/InititativeModal'
 import {
@@ -30,8 +24,6 @@ class UserPage extends Component {
     showButton: false
   }
 
-
-
   componentDidMount() {
     this.props.getUser(localStorage.getItem('id'));
     // this.props.asyncGetDataAboutPerson()
@@ -41,7 +33,6 @@ class UserPage extends Component {
     this.setState({...this.state, showButton: !this.state.showButton })
   }
 
-
   getDataOfForm = (event) => {
      event.preventDefault()
      const { education, experience, publicActivity , socialNetwork } = event.target;
@@ -50,7 +41,6 @@ class UserPage extends Component {
     }
 
   setOpen = () => { this.setState({ open: !this.state.open }) }
-
 
 
   render() {
@@ -75,19 +65,8 @@ class UserPage extends Component {
       name={this.props.user.name}
       /> }
 
-
-      {/* {user.leader &&
-        user.leader.status
-        ?
-        <Leader user={user} />
-        :
-        <User user={user}/>
-      } */}
-
-<Button className="button" onClick={() => this.setOpen()}>Add initiative</Button>
+      <Button className="button" onClick={() => this.setOpen()}>Добавить Инициативу</Button>
         {this.state.open ? <InitiativeModal /> : null}
-
-
     </>)
   }
 }

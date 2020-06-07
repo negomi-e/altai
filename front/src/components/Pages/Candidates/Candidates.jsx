@@ -44,8 +44,8 @@ const Candidates = (props) => {
 
   return (
     <div className={classes.root} >
-      <h2>List of all Candidates</h2>
-      <TextField label="Search" margin="normal" onChange={Search(this)} variant="outlined" />
+      <h2>Список всех кандидатов</h2>
+      <TextField label=" Поиск..." margin="normal" onChange={Search(this)} variant="outlined" />
 
       <div className={classes.content}>
         <Grid

@@ -51,7 +51,7 @@ export default function TopCandidates () {
 
         return (
             <div  className={classes.root} spacing={2}>
-                <Typography variant="h2" color="textSecondary" component="h2" className={classes.title}>This month's leaders</Typography>
+                <Typography variant="h2" color="textSecondary" component="h2" className={classes.title}>Лидеры этого месяца</Typography>
                 
             <GridList className={classes.gridList} cols={2.5}>
                     {/* <Grid container className={classes.grid} justify="center" > */}
@@ -74,10 +74,10 @@ export default function TopCandidates () {
                                     </CardActionArea>
                                     <CardActions>
                                         <Button size="small" color="primary">
-                                            Share
+                                        Поделиться
         </Button>
                                         <Button size="small" color="primary">
-                                            Their initiatives
+                                        инициативы
         </Button>
                                     </CardActions>
                                 </Card>

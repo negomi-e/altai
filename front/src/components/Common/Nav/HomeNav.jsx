@@ -16,7 +16,7 @@ export default function HomeNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={classes.NavBarWrap + " mr-auto"}>
 
-            <NavLink activeClassName={classes.active} to="/">Алтай</NavLink>
+            <NavLink activeClassName={classes.active} to="/">Домашняя страница</NavLink>
 
             <NavLink className="nav_link" activeClassName={classes.active} to="/candidates">Сообщество</NavLink>
 
