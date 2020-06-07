@@ -81,13 +81,13 @@ const OngoingProjects = props => {
               divider={i < products.length - 1}
               key={product.id}
             >
-              <ListItemAvatar>
+              {/* <ListItemAvatar>
                 <img
                   alt="Product"
                   className={classes.image}
                   src={product.imageUrl}
-                />
-              </ListItemAvatar>
+                /> */}
+              {/* </ListItemAvatar> */}
               <ListItemText
                 primary={product.name}
                 secondary={`Updated ${product.updatedAt.fromNow()}`}

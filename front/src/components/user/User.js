@@ -10,9 +10,11 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    border: '1px gray solid',
-    width: '100%',
-    height: 'auto'
+    // border: '1px gray solid',
+    width: '50%',
+    height: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   features: {
     display: 'flex',
@@ -20,9 +22,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   avatar: {
-    width: '250px',
-    height: '400px',
+    height: '200px',
+    width: '200px',
     display: 'inline-block',
+    borderRadius: '50%',
+    margin: '10px'
   },
   rootinfo: {
     display: 'inline',

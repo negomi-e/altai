@@ -7,6 +7,7 @@ import Expert from '../../components/user/Expert';
 import { asyncSendDataToBase, 
   // asyncGetDataAboutPerson 
 } from '../../redux/personalCabinet/asyncActionCreator'
+import './user.css'
 
 
 import InitiativeModal from '../../components/Common/Modal/InititativeModal'
@@ -46,7 +47,7 @@ class UserPage extends Component {
   render() {
     const { user } = this.props;
    
-    return (<>
+    return (<div className="profile">
 
       {user.leader && user.leader.status 
       ?  
@@ -65,9 +66,10 @@ class UserPage extends Component {
       name={this.props.user.name}
       /> }
 
+    <br/>
       <Button className="button" onClick={() => this.setOpen()}>Добавить Инициативу</Button>
         {this.state.open ? <InitiativeModal /> : null}
-    </>)
+    </div>)
   }
 }
 
