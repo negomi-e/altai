@@ -5,15 +5,15 @@ import User from '../../components/user/User';
 import Leader from '../../components/user/Leader';
 import Expert from '../../components/user/Expert';
 
-import {  getUser,} from '../../redux/user/actions';
+// import {  getUser,} from '../../redux/user/actions';
 import { asyncSendDataToBase, 
   // asyncGetDataAboutPerson 
 } from '../../redux/personalCabinet/asyncActionCreator'
 // import { sendDataToStore } from '../../redux/personalCabinet/actionCreator'
 
-class UserPage extends Component {
-  state = { showButton: false }
-  
+// class UserPage extends Component {
+//   state = { showButton: false }
+// }
 
 import InitiativeModal from '../../components/Common/Modal/InititativeModal'
 import {
@@ -27,6 +27,7 @@ import {
 class UserPage extends Component {
   state = {
     open: false,
+    showButton: false
   }
 
 
@@ -75,13 +76,13 @@ class UserPage extends Component {
       /> }
 
 
-      {user.leader &&
+      {/* {user.leader &&
         user.leader.status
         ?
         <Leader user={user} />
         :
         <User user={user}/>
-      }
+      } */}
 
 <Button className="button" onClick={() => this.setOpen()}>Add initiative</Button>
         {this.state.open ? <InitiativeModal /> : null}
