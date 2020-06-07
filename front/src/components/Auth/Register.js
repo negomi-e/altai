@@ -37,17 +37,23 @@ class Register extends Component {
             <legend>Зарегистрировать</legend>
 
             <Form.Group controlId="formBasicNumber">
-              <Form.Control value={this.state.phone} onChange={this.changeHandler} type="text" placeholder="Номер" name="telephonenumber" required />
+              <Form.Control 
+              // value={this.state.phone} 
+              onChange={this.changeHandler} type="text" placeholder="Номер" name="telephonenumber" required />
 
             </Form.Group>
 
             <Form.Group controlId="formBasicName">
-              <Form.Control value={this.state.name} onChange={this.changeHandler} type="text" placeholder="Имя" name="inputName" required />
+              <Form.Control 
+              // value={this.state.name} 
+              onChange={this.changeHandler} type="text" placeholder="Имя" name="inputName" required />
 
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Control value={this.state.password} onChange={this.changeHandler} type="password" placeholder="Пароль" name="inputPass" required />
+              <Form.Control 
+              // value={this.state.password} 
+              onChange={this.changeHandler} type="password" placeholder="Пароль" name="inputPass" required />
             </Form.Group>
 
             <Button variant="primary" type="submit">

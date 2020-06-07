@@ -38,8 +38,8 @@ const Candidates = (props) => {
 
 
 
-  let Search = (e) => {
-    // this.props.search(e.target.value)
+  const Search = (e) => {
+    // props.user.search(e.target.value)
   }
 
   return (

@@ -33,11 +33,15 @@ class Login extends Component {
         <Form name="loginForm" className="form" onSubmit={this.submitHandler}>
           <legend>Вход</legend>
           <Form.Group controlId="formBasicNumber">
-            <Form.Control required value={this.state.phone} onChange={this.changeHandler} type="text" placeholder="Номер" name="phone" />
+            <Form.Control required 
+            // value={this.state.phone} 
+            onChange={this.changeHandler} type="text" placeholder="Номер" name="phone" />
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
-            <Form.Control required value={this.state.password} onChange={this.changeHandler} type="password" placeholder="Пароль" name="password" />
+            <Form.Control required 
+            // value={this.state.password} 
+            onChange={this.changeHandler} type="password" placeholder="Пароль" name="password" />
           </Form.Group>
 
           <Form.Group controlId="formBasicCheckbox">
