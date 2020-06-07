@@ -1,6 +1,7 @@
 import {
   GET_USER,
   GET_ALL,
+  GET_LEADERS
 } from './types';
 
 export function getUser(id) {
@@ -54,3 +55,19 @@ console.log(333)
     }
   }
 }
+
+export function getLeaders() {
+  console.log(333)
+    return async function (dispatch) {
+      try {
+        const response = await fetch('/users/leaders/1');
+        const { leaders } = await response.json();
+        dispatch({
+          type: GET_LEADERS,
+          payload: leaders,
+        });
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  }

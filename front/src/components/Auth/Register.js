@@ -28,7 +28,7 @@ class Register extends Component {
   render() {
     return (
     <Container>
-        {this.props.auth ? <Redirect to="/homepage" /> : null}
+        {this.props.auth ? <Redirect to="/" /> : null}
         {this.props.err ? <p>{this.props.err}</p> : null}
         <section className="authPage">
 

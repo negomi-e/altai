@@ -24,9 +24,10 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const useStyles = makeStyles(theme => ({
   root: {
-      width: '50%',
-      height: 'auto',
-    border: '1px solid gray'
+    width: '40%',
+    height: 'auto',
+    margin: '40px',
+    justifyContent: 'flex-start'
   },
   content: {
     padding: 0

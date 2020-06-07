@@ -22,6 +22,13 @@ import InitiativeModal from '../../Common/Modal/InititativeModal'
 
 
 const useStyles = makeStyles((theme) => ({
+  root1: {
+    maxWidth: 800,
+    // display: 'flex',
+    alignItems: 'center',
+    marginLeft: '20%',
+    marginTop: '20px'
+  },
   root: {
     maxWidth: 800,
   },
@@ -42,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  button: {
+    marginBottom: '10px'
+  }
 }));
 
  function Initiatives() {
@@ -76,8 +86,8 @@ const useStyles = makeStyles((theme) => ({
 const setOpen = () => { open = true} 
 
   return (
-    <Container fixed>
-      <Button className="button" onClick={() => setOpen()}>Add initiative</Button>
+    <Container fixed className={classes.root1}>
+      <Button className={classes.button}  onClick={() => setOpen()}>Add initiative</Button>
         {open ? <InitiativeModal /> : null}
 
       <>

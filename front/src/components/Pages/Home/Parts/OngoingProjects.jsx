@@ -22,12 +22,16 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '50%',
+        width: '40%',
     height: 'auto',
-    border: '1px solid gray'
+    margin: '40px',
+  
+    justifyContent: 'flex-start'
+    // border: '1px solid gray'
   },
   content: {
-    padding: 0
+    padding: 0,
+    
   },
   image: {
     height: 48,

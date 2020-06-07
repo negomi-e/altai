@@ -9,14 +9,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        border: '1px gray solid',
+        // border: '1px gray solid',
         width: '100%',
-        height: 'auto'
+        height: '300px'
     },
     features:{
     display: 'flex',
+    justifyContent: 'top',
     alignItems: 'center',
     width: '100%',
+    margin: '50px'
     }
 
 }));

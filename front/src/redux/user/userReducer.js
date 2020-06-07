@@ -1,6 +1,7 @@
 import {
   GET_USER,
   GET_ALL,
+  GET_LEADERS
 } from './types';
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
     },
     users: '',
   },
+  leaders: []
 }
 
 export default function userReducer(state = initialState, action) {
@@ -20,6 +22,8 @@ export default function userReducer(state = initialState, action) {
       return { ...state, user: action.payload };
     case GET_ALL:
       return { ...state, users: action.payload }
+  case GET_LEADERS:
+        return { ...state, leaders: action.payload }
     default: return state;
   }
 }

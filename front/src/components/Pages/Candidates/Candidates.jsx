@@ -20,7 +20,17 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     marginTop: '20px',
+    marginLeft: '50px'
   },
+  search: {
+    marginTop: '20px',
+    marginLeft: '50px'
+  },
+  title:{
+    display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+  }
 }));
 
 const Candidates = (props) => {
@@ -44,8 +54,8 @@ const Candidates = (props) => {
 
   return (
     <div className={classes.root} >
-      <h2>List of all Candidates</h2>
-      <TextField label="Search" margin="normal" onChange={Search(this)} variant="outlined" />
+      <Typography variant="h2" color="grey" component="h2" className={classes.title}>Список кандидатов</Typography>
+      <TextField label="Search" className={classes.search} onChange={Search(this)} variant="outlined" />
 
       <div className={classes.content}>
         <Grid
