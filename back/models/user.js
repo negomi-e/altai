@@ -45,6 +45,9 @@ const UserSchema = new Schema({
   initativ: {
     type: Array,
     default: [],
+  },
+  position:{
+    type: String
   }
 });
 

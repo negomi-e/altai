@@ -9,6 +9,7 @@ const InitSchema = new Schema({
   date: Date,
   title: String,
   text: String,
+  likes: Number
 
 });
 

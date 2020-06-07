@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#afeeee',
   },
   leader:{
-    color: '#FFDF00'
+    backgroundColor: '#FFDF00'
   }
 }));
 
