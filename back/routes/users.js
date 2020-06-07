@@ -44,4 +44,15 @@ router.get('/all/1', async (req, res) => {
   }
 });
 
+router.get('/leaders/1', async (req, res) => {
+  console.log('here')
+  try {
+    const leaders = await User.find({'position': 'leader'});
+    // console.log('leaders', leaders)
+    res.json({ leaders });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 module.exports = router;
