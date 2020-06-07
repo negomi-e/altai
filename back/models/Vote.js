@@ -1,11 +1,15 @@
 const { Schema, model } = require('mongoose');
 
 const VoteSchema = new Schema({
-  vote: {
-    author: String,
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     date: Date,
-    candidate: String,
-  }
+    candidate: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
 });
 
 module.exports = model('Vote', VoteSchema);

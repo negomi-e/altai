@@ -3,35 +3,43 @@ import { makeStyles } from '@material-ui/core/styles';
 import moment from 'moment'
 import clsx from 'clsx';
 import {
-    Card,
-    CardHeader,
-    CardMedia,
-    CardContent,
-    CardActions,
-    Collapse,
-    Avatar,
-    IconButton,
-    Typography,
-    Table,
-    TableBody,
-    TableRow,
-    TableCell
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  Avatar,
+  IconButton,
+  Typography,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell
 } from '@material-ui/core/';
 
-import { red } from '@material-ui/core/colors';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import { faHome, faUser, faUserTie, faUserAstronaut, faUserGraduate, faUserSecret, faCrown } from "@fortawesome/free-solid-svg-icons";
+import { library, icon } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+import TelegramIcon from '@material-ui/icons/Telegram';
+
+  import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+  import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
-    color: 'black'
+    maxWidth: '80%',
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: 'black',
+    minHeight: '100%'
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56.25%', 
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -44,42 +52,68 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: '#afeeee',
   },
+  leader:{
+    backgroundColor: '#FFDF00'
+  }
 }));
 
 export default function InfluencerCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const {influencer} = props
-  const topics = influencer.topics
-  
+  const { influencer } = props
+  const topics = influencer.reports
+
+  let positionicon;
+  switch (influencer.position) {
+    case 'amateur':
+      positionicon = faUser
+      break;
+    case 'helper':
+      positionicon = faUserTie
+      break;
+    case 'launch':
+      positionicon = faUserAstronaut
+      break;
+    case 'leader':
+      positionicon = faCrown
+      break;
+    case 'mentor':
+      positionicon = faUserGraduate
+      break;
+    default:
+      positionicon = faUser
+  }
+
+
 
   return (
-    <Card className={classes.root} key={influencer.id}>
+    <Card className={classes.root} key={influencer._id}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            {influencer.votes}
+          <Avatar aria-label="icon-role" className={classes.avatar}>
+            {positionicon === 'leader'?<FontAwesomeIcon className={classes.leader} icon={positionicon} />:
+            <FontAwesomeIcon icon={positionicon} />}
           </Avatar>
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
+            <TelegramIcon />
           </IconButton>
         }
         title={influencer.name}
         subheader={influencer.region}
       />
-      <CardMedia
+      {/* <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
         title="icon"
-      />
+      /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {influencer.bio}
@@ -87,7 +121,7 @@ export default function InfluencerCard(props) {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="vote">
-        <ThumbUpIcon />
+          <ThumbUpIcon />
         </IconButton>
         <IconButton
           className={clsx(classes.expand, {
@@ -104,21 +138,21 @@ export default function InfluencerCard(props) {
         <CardContent>
           <Typography paragraph>Their initiatives</Typography>
           <Table>
-          <TableBody>
-                {topics.length>0? topics.map(topic => (
-                  <TableRow
-                    hover
-                    key={topic.id}
-                  >
-                    <TableCell>{topic.issue}</TableCell>
-                    <TableCell>
-                      {moment(topic.createdAt).format('DD/MM/YYYY')}
-                    </TableCell>
-                   
-                  </TableRow>
-                )): <div> No initiatives</div>}
-              </TableBody>
-            </Table>
+            <TableBody>
+              {topics.length > 0 ? topics.map(topic => (
+                <TableRow
+                  hover
+                  key={topic._id}
+                >
+                  <TableCell>{topic.report}</TableCell>
+                  <TableCell>
+                    {moment(topic.createdAt).format('DD/MM/YYYY')}
+                  </TableCell>
+
+                </TableRow>
+              )) : <div> No initiatives</div>}
+            </TableBody>
+          </Table>
         </CardContent>
       </Collapse>
     </Card>

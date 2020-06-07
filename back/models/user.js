@@ -38,6 +38,19 @@ const UserSchema = new Schema({
   },
   rating: {
     type: Number
+  },
+  bio: {
+    type: String,
+  },
+  region: {
+    type: String,
+  },
+  initativ: {
+    type: Array,
+    default: [],
+  },
+  position:{
+    type: String
   }
 });
 

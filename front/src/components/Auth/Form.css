@@ -1,0 +1,19 @@
+.form{
+    padding-top: 50px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.form-group{
+    padding: 5px
+}
+
+.btn{
+    margin-top: 5px;
+    width: 120px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    background-color: #0C4D75;
+    color: white;
+    outline: none;
+    
+}

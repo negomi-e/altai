@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import User from '../../components/user/User';
 import Leader from '../../components/user/Leader';
 import Expert from '../../components/user/Expert';
+
 import {  getUser,} from '../../redux/user/actions';
 import { asyncSendDataToBase, 
   // asyncGetDataAboutPerson 
@@ -13,6 +14,23 @@ import { asyncSendDataToBase,
 class UserPage extends Component {
   state = { showButton: false }
   
+
+import InitiativeModal from '../../components/Common/Modal/InititativeModal'
+import {
+  Button,
+} from 'react-bootstrap';
+import {
+  getUser,
+} from '../../redux/user/actions';
+
+
+class UserPage extends Component {
+  state = {
+    open: false,
+  }
+
+
+
   componentDidMount() {
     this.props.getUser(localStorage.getItem('id'));
     // this.props.asyncGetDataAboutPerson()
@@ -22,6 +40,7 @@ class UserPage extends Component {
     this.setState({...this.state, showButton: !this.state.showButton })
   }
 
+
   getDataOfForm = (event) => {
      event.preventDefault()
      const { education, experience, publicActivity , socialNetwork } = event.target;
@@ -29,10 +48,15 @@ class UserPage extends Component {
      this.props.asyncSendDataToBase(id, education.value, experience.value, publicActivity.value, socialNetwork.value )
     }
 
+  setOpen = () => { this.setState({ open: !this.state.open }) }
+
+
+
   render() {
     const { user } = this.props;
    
     return (<>
+
       {user.leader && user.leader.status 
       ?  
       <Leader user={user} /> 
@@ -49,6 +73,20 @@ class UserPage extends Component {
       rating={this.props.user.rating}
       name={this.props.user.name}
       /> }
+
+
+      {user.leader &&
+        user.leader.status
+        ?
+        <Leader user={user} />
+        :
+        <User user={user}/>
+      }
+
+<Button className="button" onClick={() => this.setOpen()}>Add initiative</Button>
+        {this.state.open ? <InitiativeModal /> : null}
+
+
     </>)
   }
 }

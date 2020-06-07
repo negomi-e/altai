@@ -1,8 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 
 .root{
-    background-color: white;
+    /* background-color: #afeeee; */
     color: black;
     font-family: 'Source Sans Pro', sans-serif !important;
 }
 
+.home__banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    width: 100%;
+    object-fit: scale-down;
+    background: url('../../public/images/altai-background.jpg') no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(28,28,28,0.76);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(28,28,28,0.76);
+    box-shadow: inset 0px 0px 5px 0px rgba(28,28,28,0.76);
+  }
+
+  .involved{
+      background-color: #0C4D75;
+      height: 150px;
+      opacity:.7;
+      color: white;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      font-size: 25px;
+  }
+
+.home__banner p{
+    align-items: center;
+    text-align: center;
+    font-size: 100px;
+    font-style: bold;
+    font-family: 'Amatic SC', cursive;
+}

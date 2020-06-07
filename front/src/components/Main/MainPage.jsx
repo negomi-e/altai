@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import AuthPage from './AuthPage'
-import HomePage from './HomePage'
+import AuthPage from './AuthPage/AuthPage'
+import HomePage from './HomePage/HomePage'
 import './MainPage.css'
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from '@material-ui/core'
@@ -11,9 +11,6 @@ const theme = createMuiTheme({
     fontFamily: 'Source Sans Pro, sans-serif',
   }
 });
-
-
-
 
 class MainPage extends Component {
   render() {
