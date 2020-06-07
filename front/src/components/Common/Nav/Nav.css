@@ -4,7 +4,6 @@
 }
 
 nav {
-  border-radius: 0px 0px 10px 10px;
   background-color: none !important;
   background: #0C4D75 !important;
 }
@@ -31,3 +30,14 @@ nav {
   font-weight: bold;
 }
 
+.logo-auth{
+  padding-top: 20px;
+  width: 162px;
+  height: 162px;
+}
+
+.logo-home{
+  padding-top: 20px;
+  width: 70px;
+  height: 70px;
+}

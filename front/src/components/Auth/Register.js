@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { auth_register } from '../../redux/auth/auth_actions'
+import './Form.css'
+
+import { Form, Button, Container } from 'react-bootstrap'
 
 class Register extends Component {
   state = {
@@ -21,20 +24,40 @@ class Register extends Component {
     const { phone, name, password } = this.state
     this.props.register(phone, name, password)
   }
-  
+
   render() {
     return (
-      <div>
-        <h2>Register</h2>
+    <Container>
         {this.props.auth ? <Redirect to="/homepage" /> : null}
         {this.props.err ? <p>{this.props.err}</p> : null}
-        <form onSubmit={this.submitHandler}>
-          <input onChange={this.changeHandler} name='phone' type="text" placeholder="Номер" required />
-          <input onChange={this.changeHandler} name='name' type="text" placeholder="Имя" required />
-          <input onChange={this.changeHandler} name='password' type="password" placeholder="Пароль" required />
-          <input type="submit" value="Войти" />
-        </form>
-      </div>
+        <section className="authPage">
+
+          <Form name="registrationForm" onSubmit={this.submitHandler} className='form'>
+
+            <legend>Зарегистрировать</legend>
+
+            <Form.Group controlId="formBasicNumber">
+              <Form.Control value={this.state.phone} onChange={this.changeHandler} type="text" placeholder="Номер" name="telephonenumber" required />
+
+            </Form.Group>
+
+            <Form.Group controlId="formBasicName">
+              <Form.Control value={this.state.name} onChange={this.changeHandler} type="text" placeholder="Имя" name="inputName" required />
+
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Control value={this.state.password} onChange={this.changeHandler} type="password" placeholder="Пароль" name="inputPass" required />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Войти
+      </Button>
+
+          </Form>
+
+        </section>
+      </Container>
     )
   }
 }

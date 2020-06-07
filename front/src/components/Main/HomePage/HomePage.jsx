@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { NavLink, Route, Switch } from 'react-router-dom'
-import HomeNav from '../Common/Nav/HomeNav'
+import HomeNav from '../../Common/Nav/HomeNav'
 
-import Logout from '../../components/Auth/Logout'
+import Logout from '../../Auth/Logout'
 
-import Home from '../Pages/Home/Home'
-import Initiatives from '../Pages/Initiatives/Initiatives'
-import Candidates from '../Pages/Candidates/Candidates'
-import ProjectsInProgress from '../Pages/ProjectsInProgress/ProjectsInProgress'
-import UserPage from '../ivan/UserPage';
+import Home from '../../Pages/Home/Home'
+import Initiatives from '../../Pages/Initiatives/Initiatives'
+import Candidates from '../../Pages/Candidates/Candidates'
+import ProjectsInProgress from '../../Pages/ProjectsInProgress/ProjectsInProgress'
+import UserPage from '../../ivan/UserPage';
 
 class HomePage extends Component {
   render() {
     return (
-      <div >
+      <div>
         <HomeNav />
 
         <Switch>
@@ -38,4 +38,4 @@ class HomePage extends Component {
     )
   }
 }
-export default HomePage
+export default HomePage;
