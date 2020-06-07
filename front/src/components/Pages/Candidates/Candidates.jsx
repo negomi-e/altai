@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import {
-  getUser,
+  getAllUsers,
 } from '../../../redux/user/actions';
 
 //DESIGN
@@ -23,19 +23,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Candidates = ()=> {
+const Candidates = (props) => {
 
   let inputSearch = '';
 
   useEffect(() => {
     //PROBLEM THIS ONLY RENDERS ONE USER-- I NEED ALL
-    this.props.getUser(localStorage.getItem('id'));
-  });
-  
-  const {user} = this.props
+    props.getAllUsers();
+    // return () =>
+  }, []);
+
+
   const classes = useStyles();
-  const users = []
-  
+
+
 
   let Search = (e) => {
     // this.props.search(e.target.value)
@@ -44,14 +45,14 @@ const Candidates = ()=> {
   return (
     <div className={classes.root} >
       <h2>List of all Candidates</h2>
-      <TextField  label="Search" margin="normal" onChange={Search(this)} variant="outlined" />
-      
+      <TextField label="Search" margin="normal" onChange={Search(this)} variant="outlined" />
+
       <div className={classes.content}>
         <Grid
           container
           spacing={3}
         >
-          {user.map(influencer => (
+          {props.user && props.user.map(influencer => (
             <Grid
               item
               key={influencer.id}
@@ -68,4 +69,13 @@ const Candidates = ()=> {
   )
 }
 
-export default Candidates;
+
+const mapStatetoProps = (state) => {
+  return {
+    user: state.user.users,
+  }
+}
+
+export default connect(mapStatetoProps, {
+  getAllUsers,
+})(withRouter(Candidates));
