@@ -54,7 +54,7 @@ const Candidates = (props) => {
 
   return (
     <div className={classes.root} >
-      <Typography variant="h2" color="grey" component="h2" className={classes.title}>Список кандидатов</Typography>
+      <Typography variant="h2" color="grey" component="h2" className={classes.title}>Список всех кандидатов</Typography>
       <TextField label="Search" className={classes.search} onChange={Search(this)} variant="outlined" />
 
       <div className={classes.content}>

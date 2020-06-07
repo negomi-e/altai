@@ -10,6 +10,7 @@ const dbConnection = require('./models/db-connect')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const personalCabinetRouter = require('./routes/personalCabinet')
 
 const app = express();
 
@@ -37,7 +38,8 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/auth', authRouter)
+app.use('/auth', authRouter);
+app.use('/personalCab', personalCabinetRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -71,7 +71,7 @@ const OngoingProjects = props => {
     >
       <CardHeader
         subtitle={`${products.length} in total`}
-        title="Latest news"
+        title="Последние новости"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -109,7 +109,7 @@ const OngoingProjects = props => {
           size="small"
           variant="text"
         >
-          View all <ArrowRightIcon />
+          Посмотреть все <ArrowRightIcon />
         </Button>
       </CardActions>
     </Card>

@@ -87,7 +87,7 @@ const setOpen = () => { open = true}
 
   return (
     <Container fixed className={classes.root1}>
-      <Button className={classes.button}  onClick={() => setOpen()}>Add initiative</Button>
+      <Button className={classes.button}  onClick={() => setOpen()}>Добавить инициативу</Button>
         {open ? <InitiativeModal /> : null}
 
       <>

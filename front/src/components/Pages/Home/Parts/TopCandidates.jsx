@@ -84,7 +84,7 @@ function TopCandidates(props) {
 
     return (
         <div className={classes.root} spacing={2}>
-            <Typography variant="h2" color="grey" component="h2" className={classes.title}>Ваш представитель</Typography>
+            <Typography variant="h2" color="grey" component="h2" className={classes.title}>Лидеры этого месяца</Typography>
         <br/>
             <GridList className={classes.gridList} cols={2.5}>
                 {/* <Grid container className={classes.grid} justify="center" > */}
@@ -107,10 +107,10 @@ function TopCandidates(props) {
                             </CardActionArea>
                             <CardActions className={classes.actions}>
                                 <Button size="small" color="primary">
-                                    Share
+                                Поделиться
         </Button>
                                 <Button size="small" color="primary">
-                                    Their initiatives
+                                инициативы
         </Button>
                             </CardActions>
                         </Card>
