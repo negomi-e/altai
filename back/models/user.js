@@ -36,6 +36,9 @@ const UserSchema = new Schema({
   votes: {
     type: Array,
   },
+  rating: {
+    type: Number
+  },
   bio: {
     type: String,
   },
