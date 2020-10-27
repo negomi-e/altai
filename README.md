@@ -2,6 +2,7 @@
 
 The result of a 36 hour hackathon. 
 
+<img src="https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.29.png" width="100" height="100">
 ![Homepage](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.29.png){:height="60px" width="100px"}
 ![account page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.19.png)
 ![News page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.09.png)
