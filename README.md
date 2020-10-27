@@ -2,6 +2,11 @@
 
 The result of a 36 hour hackathon. 
 
+![Homepage](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.29.png 253)
+![account page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.19.png 253)
+![News page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.09.png 253)
+![Voting page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.56.58.png 253)
+
 # Requirements
 
 - Creating an information system for identifying public opinion leaders
