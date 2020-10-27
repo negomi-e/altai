@@ -2,10 +2,10 @@
 
 The result of a 36 hour hackathon. 
 
-![Homepage](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.29.png)
-![account page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.19.png)
-![News page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.09.png)
-![Voting page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.56.58.png)
+![Homepage](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.29.png){:height="36px" }
+![account page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.19.png){:height="36px" }
+![News page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.57.09.png){:height="36px" }
+![Voting page](https://github.com/negomi-e/altai/blob/master/images/Screenshot%202020-10-27%20at%2012.56.58.png){:height="36px" }
 
 # Requirements
 
